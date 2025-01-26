@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 22:15:52 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 19:53:18 by arimanuk         ###   ########.fr       */
+/*   Created: 2025/01/26 16:29:05 by arimanuk          #+#    #+#             */
+/*   Updated: 2025/01/26 17:15:26 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
-
-	i = 0;
-	if (str == NULL)
-		return (NULL);
-	while (str[i])
-		i++;
-	if (c == '\0')
-		return ((char*)str + i);
-	i--;
-	while (i >= 0)
+	if (n == -2147483648)
 	{
-		if (str[i] != (char)c)
-			i--;
-		else
-			return ((char*)str + i);
+		ft_putstr_fd("-2", fd);
+		ft_putnbr_fd(147483648, fd);
 	}
-	return (NULL);
+	else if (n < 0)
+	{
+		ft_putstr_fd("-", fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd((n + 48), fd);
 }
-/*
-int main()
-{
-	printf("%s\n", ft_strrchr("Vardan", '\0'));
-	printf("dzery %s\n", strrchr("Vardan", '\0'));
-}*/
+
+// int main()
+// {
+//   ft_putnbr_fd(-1243, 1);
+// }

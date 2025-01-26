@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimanuk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:31 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/10 18:59:58 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:06:30 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int ft_tolower(int ch)
 		ch += 32;
 	return (ch);
 }
-
-
 /*int main()
 {
 	printf("%c\n", ft_tolower(''));

@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 22:15:52 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 19:53:18 by arimanuk         ###   ########.fr       */
+/*   Created: 2025/01/11 20:20:00 by arimanuk          #+#    #+#             */
+/*   Updated: 2025/01/24 22:09:56 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char *ft_strrchr(const char *str, int c)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-
+    char	*a;
+    int		i;
+	int		j;
+	int		s_len;
 	i = 0;
-	if (str == NULL)
+	j = 0;
+	s_len = (ft_strlen(s1) + ft_strlen(s2));
+	a = (char *)malloc((s_len + 1) * sizeof(char));
+	if (a == NULL)
 		return (NULL);
-	while (str[i])
-		i++;
-	if (c == '\0')
-		return ((char*)str + i);
-	i--;
-	while (i >= 0)
+	while (s1[i])
 	{
-		if (str[i] != (char)c)
-			i--;
-		else
-			return ((char*)str + i);
+		a[i] = s1[i];
+		i++;
 	}
-	return (NULL);
+	while (s2[j])
+	{
+		a[i + j] = s2[j];
+		j++;
+	}
+	a[i + j] = '\0';
+	return (a);
 }
-/*
-int main()
-{
-	printf("%s\n", ft_strrchr("Vardan", '\0'));
-	printf("dzery %s\n", strrchr("Vardan", '\0'));
-}*/
+
+// int main()
+// {
+// 	char a[6] = "Hello";
+// 	char b[12] = "world!ddddd";
+// 	printf("%s\n", ft_strjoin(a, b));
+// }

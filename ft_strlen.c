@@ -3,26 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimanuk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 21:29:52 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/12 21:59:10 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/22 19:50:29 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *c)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
+	if (str == NULL)
+		return (0);
 	i = 0;
-	while (c[i])
+	while (str[i])
 		i++;
 	return (i);
 }
-/*#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_strlen("Arishok"));
-}*/
+// #include <stdio.h>
+// int main()
+// {
+// 	char *str = "Arishhhh";
+// 	printf("%s\n", str);
+// }

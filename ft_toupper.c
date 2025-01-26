@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimanuk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:09:21 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/09 22:21:00 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:06:39 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int ft_toupper(int ch)
 }
 
 #include <stdio.h>
-
+/*
 int main()
 {
 	printf("%c\n", ft_toupper(91));
-}
+}*/

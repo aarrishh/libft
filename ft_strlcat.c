@@ -5,41 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 19:45:43 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/16 20:09:18 by arimanuk         ###   ########.fr       */
+/*   Created: 2025/01/17 19:30:43 by arimanuk          #+#    #+#             */
+/*   Updated: 2025/01/18 21:18:36 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t my_strlcat(char *dest, const char *src, size_t size) {
-	size_t i;
-	size_t dest;
+size_t ft_strlcat(char *dst, const char *src, size_t n)
+{
+	size_t			i;
+	size_t			j;
+	size_t			len;
+	unsigned char	*a;
 
 	i = 0;
-	dest = 0;
-    while (dest[dest_len] != '\0' && dest_len < size) {
-        dest_len++;
-    }
-    if (dest_len == size) {
-        return dest_len + my_strlen(src);
-    }
-    while (src[i] != '\0' && dest_len + i < size - 1) {
-        dest[dest_len + i] = src[i];
-        i++;
-    }
-    if (dest_len + i < size) {
-        dest[dest_len + i] = '\0';
-    }
-    while (src[i] != '\0') {
-        i++;
-    }
-    return dest_len + i;
+	j = 0;
+	len = 0;
+	a = (unsigned char *)src;
+	while (src[len])
+		len++;
+	while (dst[i])
+		i++;
+	if (dst[i] == '\0')
+	{
+		while (j < n)
+		{
+			dst[i + j] = a[j];
+			j++;
+		}
+	}
+	if (len > n)
+		return (i + n);
+	return (i + j);
 }
-size_t my_strlen(const char *str) {
-    size_t len = 0;
-    while (str[len] != '\0') {
-        len++;
-    }
-    return len;
-}
+
+// int main()
+// {
+// 	char a[13] = "Hello ";
+// 	char b[7] = "world!";
+// 	printf("%zu\n", ft_strlcat(a, b, 2));
+// }

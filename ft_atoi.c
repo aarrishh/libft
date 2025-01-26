@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimanuk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:34:37 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/12 21:24:13 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/19 16:24:13 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_atoi(const char *str)
 	}
 	else if (str[i] == '+')
 		i++;
-	while (str[i])
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		y = (y * 10) + (str[i] - 48);
 		i++;
@@ -39,8 +39,9 @@ int	ft_atoi(const char *str)
 	return (sign * y);
 }
 
-/*#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_atoi("  -2147483648"));
-}*/
+// #include <stdio.h>
+// int main()
+// {
+// 	printf("%d\n", ft_atoi("11a1"));
+// 	printf("%d\n", atoi("11a1"));
+// }

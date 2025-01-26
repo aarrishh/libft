@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 22:15:52 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 19:53:18 by arimanuk         ###   ########.fr       */
+/*   Created: 2025/01/25 19:17:00 by arimanuk          #+#    #+#             */
+/*   Updated: 2025/01/25 21:36:12 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
-
+	unsigned int i;
+	unsigned int len;
+	char	*a;
+	
 	i = 0;
-	if (str == NULL)
+	if (s == NULL)
 		return (NULL);
-	while (str[i])
-		i++;
-	if (c == '\0')
-		return ((char*)str + i);
-	i--;
-	while (i >= 0)
+	len = (unsigned int)ft_strlen(s);
+	a = (char *)malloc((len + 1)* sizeof(char));
+	if (a == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		if (str[i] != (char)c)
-			i--;
-		else
-			return ((char*)str + i);
+		a[i] = f(i, s[i]);
+		i++;
 	}
-	return (NULL);
+	a[i] = '\0';
+	return (a);
 }
-/*
-int main()
-{
-	printf("%s\n", ft_strrchr("Vardan", '\0'));
-	printf("dzery %s\n", strrchr("Vardan", '\0'));
-}*/
+
+// char addOne(unsigned int i, char c) {return (i + c);}
+
+// int main()
+// {
+// 	char a[1] = "";
+// 	printf("%s\n", ft_strmapi("", addOne));
+// }

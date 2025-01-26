@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimanuk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:08:11 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/13 22:38:11 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:05:40 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void *ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
+/*
 int main()
 {
 	char a[7] = "VArdan";
 	printf("%s\n", ft_memchr(a, 66, 4));
-}
+}*/

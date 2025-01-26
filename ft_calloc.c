@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 22:15:52 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 19:53:18 by arimanuk         ###   ########.fr       */
+/*   Created: 2025/01/19 20:48:37 by arimanuk          #+#    #+#             */
+/*   Updated: 2025/01/24 22:05:03 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+void	*ft_calloc(size_t count, size_t n)
 {
-	int i;
-
-	i = 0;
-	if (str == NULL)
+    unsigned char	*buffer;
+    size_t			i;
+    
+    i = 0;
+	if ((n != 0 && count > 65536) || (n > 65536 && count != 0))
 		return (NULL);
-	while (str[i])
-		i++;
-	if (c == '\0')
-		return ((char*)str + i);
-	i--;
-	while (i >= 0)
+	buffer = (unsigned char *)malloc(count * n);
+	// if (!buffer)
+	// 	return (NULL);
+	while (i < count * n)
 	{
-		if (str[i] != (char)c)
-			i--;
-		else
-			return ((char*)str + i);
-	}
-	return (NULL);
+    	buffer[i] = 0;
+    	i++;
+    }
+    return (buffer);
 }
-/*
-int main()
-{
-	printf("%s\n", ft_strrchr("Vardan", '\0'));
-	printf("dzery %s\n", strrchr("Vardan", '\0'));
-}*/
+// int main()
+// {
+// 	printf("%s\n", ft_calloc(5, sizeof(char)));
+// }

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimanuk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:13:10 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/13 21:29:50 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/18 15:42:54 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t 			i;
+	size_t			i;
 	unsigned char	*a;
 
 	i = 0;
@@ -25,10 +25,11 @@ void ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/*
 int main()
 {
 	char a[6] = "Vardan";
 	ft_bzero(a, 4);
 	printf("%s\n",a);
 }
+*/

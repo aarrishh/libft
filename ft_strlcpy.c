@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:49:05 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/15 22:48:37 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/18 21:13:54 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	size_t	i;
 	size_t	src_len;
 
-	i = -1;
 	src_len = 0;
 	while (src[src_len])
 		src_len++;
 	if (n == 0)
 		return (src_len);
+	i = -1;
 	if (src_len >= n)
 	{
-		while (++i < n)
+		while (++i < n - 1)
 			dst[i] = src[i];
+		dst[i] = '\0';
 		return (src_len);
 	}
 	i = 0;
@@ -36,14 +37,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 		i++;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (i);	
 }
-
-
+/*
 int main()
 {
     char a[12] = "Arishokkkkk";
     char b[11] = "";
     printf("%lu\n", ft_strlcpy(b, a, 5));
     printf("%lu\n", strlcpy(b, a, 5));
-}
+}*/
