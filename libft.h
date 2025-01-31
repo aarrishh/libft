@@ -6,11 +6,11 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:08:35 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/26 16:31:39 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:31:32 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#ifndef fffffF
 #define LIBFT_H
 
 #include <unistd.h>
@@ -46,7 +46,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
-// size_t  ft_strlcat(char *dst, const char *src, size_t n);
+size_t  ft_strlcat(char *dst, const char *src, size_t n);
 char    *ft_strdup(const char *s);
 size_t  ft_strlcpy(char *dst, const char *src, size_t n);
 char *ft_substr(char const *s, unsigned int start, size_t len);
@@ -54,5 +54,6 @@ char    *ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	**ft_split(char const *s, char c);
 
 #endif

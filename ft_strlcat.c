@@ -6,38 +6,47 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:30:43 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 21:18:36 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/01/31 19:05:01 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t n)
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t			i;
+	size_t			d_len;
 	size_t			j;
-	size_t			len;
-	unsigned char	*a;
+	size_t			s_len;
 
-	i = 0;
+	d_len = 0;
 	j = 0;
-	len = 0;
-	a = (unsigned char *)src;
-	while (src[len])
-		len++;
-	while (dst[i])
-		i++;
-	if (dst[i] == '\0')
+	s_len = 0;
+	s_len = ft_strlen(src);
+	d_len = ft_strlen(dst);
+	if (dstsize == 0)
+		return (s_len);
+	if (d_len == dstsize)
+		return (d_len + s_len);
+	if (d_len > dstsize)
+		return (dstsize + s_len);
+	if (dstsize > (s_len + d_len))
 	{
-		while (j < n)
+		while (src[j])
 		{
-			dst[i + j] = a[j];
+			dst[d_len + j] = src[j];
 			j++;
 		}
+		return (d_len + j);
 	}
-	if (len > n)
-		return (i + n);
-	return (i + j);
+	else
+	{
+		while ((d_len + j) < dstsize - 1)
+		{
+			dst[d_len + j] = src[j];
+			j++;
+		}
+		return (d_len + s_len);
+	}
 }
 
 // int main()
