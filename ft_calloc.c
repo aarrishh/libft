@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:48:37 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/24 22:05:03 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:34:33 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 void	*ft_calloc(size_t count, size_t n)
 {
-    unsigned char	*buffer;
-    size_t			i;
-    
-    i = 0;
+	unsigned char	*buffer;
+	size_t			i;
+
+	i = 0;
 	if ((n != 0 && count > 65536) || (n > 65536 && count != 0))
 		return (NULL);
 	buffer = (unsigned char *)malloc(count * n);
-	// if (!buffer)
-	// 	return (NULL);
+	if (!buffer)
+		return (NULL);
 	while (i < count * n)
 	{
-    	buffer[i] = 0;
-    	i++;
-    }
-    return (buffer);
+		buffer[i] = 0;
+		i++;
+	}
+	return (buffer);
 }
 // int main()
 // {

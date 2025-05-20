@@ -6,15 +6,15 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:08:11 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 16:05:40 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:35:33 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t 			i;
+	size_t				i;
 	const unsigned char	*a;
 
 	i = 0;

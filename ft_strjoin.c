@@ -6,17 +6,19 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 20:20:00 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/24 22:09:56 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:43:44 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char    *ft_strjoin(char const *s1, char const *s2)
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char	*a;
-    int		i;
+	char	*a;
+	int		i;
 	int		j;
 	int		s_len;
+
 	i = 0;
 	j = 0;
 	s_len = (ft_strlen(s1) + ft_strlen(s2));

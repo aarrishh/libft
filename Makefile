@@ -6,7 +6,7 @@
 #    By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/12 15:58:24 by arimanuk          #+#    #+#              #
-#    Updated: 2025/01/31 17:30:57 by arimanuk         ###   ########.fr        #
+#    Updated: 2025/02/03 20:08:56 by arimanuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,11 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c f
 
 OBJS = ${SRC:.c=.o}
 
+	
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+	ar -rcs ${NAME} ${OBJS}
 
 %.o: %.c Makefile libft.h
 	$(CC) $(CFLAGS) -c $< -o $@

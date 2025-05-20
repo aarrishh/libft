@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:53:00 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/26 15:29:56 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:43:29 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned int i;
-        	
+	unsigned int	i;
+
 	i = 0;
 	if (s == NULL)
 		return ;
@@ -24,7 +24,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		f(i, &s[i]);
 		i++;
 	}
-	// printf("%s\n", s);
 }
 
 // void    f(unsigned int i, char * s) 

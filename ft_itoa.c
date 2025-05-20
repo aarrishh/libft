@@ -6,13 +6,13 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 13:31:00 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/25 19:52:28 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:35:25 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	get_copy_n(int n, int *i, int *copy_n)
+static void	get_copy_n(int n, int *i, int *copy_n)
 {
 	if (n < 0)
 	{
@@ -26,7 +26,7 @@ void	get_copy_n(int n, int *i, int *copy_n)
 	}
 }
 
-int get_i(int i, int copy_n)
+static int	get_i(int i, int copy_n)
 {
 	while (copy_n)
 	{
@@ -39,16 +39,18 @@ int get_i(int i, int copy_n)
 char	*ft_itoa(int n)
 {
 	char	*malloc_a;
-	int i;
-	int copy_n;
-	
+	int		i;
+	int		copy_n;
+
 	get_copy_n(n, &i, &copy_n);
 	i = get_i(i, copy_n);
 	if (n == 0)
-		return(ft_strdup("0"));
+		return (ft_strdup("0"));
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	malloc_a = (char *)malloc((i + 1) * sizeof(char));
+	if (malloc_a == NULL)
+		return (NULL);
 	malloc_a[i] = '\0';
 	i--;
 	if (n < 0)

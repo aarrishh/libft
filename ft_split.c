@@ -6,13 +6,13 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:03:33 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/29 22:31:19 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:41:07 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	getword(char const *s, char c)
+static int	getword(char const *s, char c)
 {
 	int	i;
 	int	count_word;
@@ -34,7 +34,7 @@ int	getword(char const *s, char c)
 	return (count_word);
 }
 
-int	malloc_char(char const *s, char c, int *i, int *start)
+static int	malloc_char(char const *s, char c, int *i, int *start)
 {
 	int	len;
 	int	j;
@@ -52,13 +52,15 @@ int	malloc_char(char const *s, char c, int *i, int *start)
 	return (len);
 }
 
-char	*func_copy(char const *s, int len_current_line, int start)
+static char	*func_copy(char const *s, int len_current_line, int start)
 {
 	int		j;
 	char	*line;
 
 	j = 0;
-	line = malloc((len_current_line + 1) * sizeof(char));
+	line = (char *)malloc((len_current_line + 1) * sizeof(char));
+	if (!line)
+		return (NULL);
 	while (j < len_current_line)
 	{
 		line[j] = s[start + j];
@@ -96,13 +98,12 @@ char	**ft_split(char const *s, char c)
 	}
 	return (buffer);
 }
+// #include <stdio.h>
 // int main()
 // {
-// 	char a[29] = "Arina jan hel ari aystex ha?";
-// 	char** ab = ft_split(a, ' ');
-// 	// int i = 0;
-// 	// while (ab[i])
-// 	// {
-// 	// 	printf("%s\n", ab[i++]);
-// 	// }
+// 	int i = 0;
+// 	char **string = ft_split("Arishik gna daserd ara ara", ' ');
+// 	while (string[i])
+// 		printf("%s\n", string[i++]);
+// 	return(0);
 // }

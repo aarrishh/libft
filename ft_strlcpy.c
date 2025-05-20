@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:49:05 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 21:13:54 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:44:30 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 		i++;
 	}
 	dst[i] = '\0';
-	return (i);	
+	return (i);
 }
 /*
 int main()

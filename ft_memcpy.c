@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 18:12:00 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 18:50:10 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:35:39 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	b = (const unsigned char *) src;
 	if (n == 0)
 		return (dest);
-	if (a == NULL || b == NULL)
+	if (a == NULL && b == NULL)
 		return (NULL);
 	while (i < n)
 	{
@@ -32,12 +32,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-int main()
-{
-	char aa[2] = "a";
-	char bb[3] = {'A', 'A', 'A'};
 
-	printf("mery %s\n", ft_memcpy(bb, aa, 2));
-	printf("dzery %s\n", memcpy(bb, aa, 2));
-}*/
+// int main()
+// {
+// 	// char aa[2] = "a";
+// 	// char bb[3] = {'A', 'A', 'A'};
+// 	printf("mery %s\n", ft_memcpy(NULL, NULL, 3));
+// 	printf("dzery %s\n", memcpy(NULL, NULL, 3));
+// }

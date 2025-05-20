@@ -6,20 +6,18 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:09:21 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/18 16:06:39 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:45:37 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int ch)
+int	ft_toupper(int ch)
 {
 	if (ch >= 97 && ch <= 122)
 		ch -= 32;
 	return (ch);
 }
-
-#include <stdio.h>
 /*
 int main()
 {

@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 20:22:24 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/30 22:20:00 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:44:44 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,28 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
-	if (needle[i] == '\0')
+	if (!*needle)
 		return ((char *)haystack);
 	if (n == 0)
 		return (NULL);
-	while (haystack[i + j] && needle[i] && (i + j) <= n)
+	j = 0;
+	while (haystack[j] && j < n)
 	{
-		if (needle[i] == haystack[i + j])
-			i++;
-		else
+		i = 0;
+		while (haystack[j + i] == needle[i] && (j + i) < n)
 		{
-			i = 0;
-			j++;
+			if (!needle[i + 1])
+				return ((char *)&haystack[j]);
+			i++;
 		}
+		j++;
 	}
-	if (haystack[i + j] != '\0' && needle[i])
-		return (NULL);
-	if ((haystack[i + j] != '\0') || ((haystack[i + j] == '\0')
-			&& ((i + j) == n) && i != 0))
-		return ((char *)haystack + j);
 	return (NULL);
 }
-
 // int main()
 // {
-//     // char ari[30] = "aaabcabcd";
-//     // char ira[10] = "abcd";
-//     printf("mery->%s\n", ft_strnstr("1", "a", 1));
-//     printf("dzery->%s\n", strnstr("1", "a", 1));
+//     char ari[30] = "aaabcabcd";
+//     char ira[10] = "abcd";
+//     printf("mery->%s\n", ft_strnstr(ari, ira, 9));
+//     // printf("dzery->%s\n", strnstr("1", "a", ));
 // }

@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 21:29:52 by arimanuk          #+#    #+#             */
-/*   Updated: 2025/01/28 19:38:19 by arimanuk         ###   ########.fr       */
+/*   Updated: 2025/02/01 22:04:04 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
-	if (str == NULL)
-		return (0);
 	i = 0;
 	while (str[i])
 		i++;
 	return (i);
 }
-// #include <stdio.h>
 // int main()
 // {
 // 	char *str = "Arishhhh";
